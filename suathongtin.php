@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php endif; ?>
 
     <div class="form-box">
-        <form method="post" action="edit.php?id=<?= (int)$person['id'] ?>">
+        <form method="post" action="suathongtin.php?id=<?= (int)$person['id'] ?>">
             <label>MSSV</label>
             <input type="text" name="masv" value="<?= htmlspecialchars($person['masv']) ?>" required>
 

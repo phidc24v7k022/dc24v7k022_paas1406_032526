@@ -64,12 +64,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php endif; ?>
 
     <div class="form-box">
-        <form method="post" action="create.php">
+        <form method="post" action="taosv.php">
             <label>MSSV</label>
-            <input type="text" name="mssv" value="<?= htmlspecialchars($_POST['mssv'] ?? '') ?>" required>
+            <input type="text" name="masv" value="<?= htmlspecialchars($_POST['masv'] ?? '') ?>" required>
 
             <label>Họ tên</label>
-            <input type="text" name="name" value="<?= htmlspecialchars($_POST['name'] ?? '') ?>" required>
+            <input type="text" name="hoten" value="<?= htmlspecialchars($_POST['hoten'] ?? '') ?>" required>
 
             <label>Năm sinh</label>
             <input type="text" name="namsinh" value="<?= htmlspecialchars($_POST['namsinh'] ?? '') ?>" required>

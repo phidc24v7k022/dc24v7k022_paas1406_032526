@@ -51,20 +51,21 @@ $people = $stmt->fetchAll();
                 <th>ID</th>
                 <th>MSSV</th>
                 <th>Họ tên</th>
-                <th>Thành phố</th>
+                <th>Năm sinh</th>
+                <th>SĐT</th>
                 <th>Email</th>
                 <th>Hành động</th>
             </tr>
         </thead>
         <tbody>
-            <?php if (count($dc24v7k022_paas_db) === 0): ?>
-                <tr><td colspan="6" style="text-align:center;">Chưa có dữ liệu</td></tr>
+            <?php if (count($people) === 0): ?>
+                <tr><td colspan="7" style="text-align:center;">Chưa có dữ liệu</td></tr>
             <?php else: ?>
-                <?php foreach ($dc24v7k022_paas_db as $p): ?>
+                <?php foreach ($people as $p): ?>
                 <tr>
                     <td><?= htmlspecialchars((string)$p['id']) ?></td>
                     <td><?= htmlspecialchars($p['masv']) ?></td>
-                    <td><?= htmlspecialchars($p['name']) ?></td>
+                    <td><?= htmlspecialchars($p['hoten']) ?></td>
                     <td><?= htmlspecialchars($p['namsinh']) ?></td>
                     <td><?= htmlspecialchars($p['dienthoai']) ?></td>
                     <td><?= htmlspecialchars($p['email']) ?></td>
