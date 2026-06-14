@@ -208,7 +208,7 @@ if ($msg !== '') {
                             <td><?= htmlspecialchars((string)$p['id']) ?></td>
                             <td><?= htmlspecialchars($p['masv']) ?></td>
                             <td><?= htmlspecialchars($p['hoten']) ?></td>
-                            <td><?= htmlspecialchars($p['namsinh']) ?></td>
+                            <td><?= (int)$p['namsinh'] ?></td>
                             <td><?= htmlspecialchars($p['dienthoai']) ?></td>
                             <td><?= htmlspecialchars($p['email']) ?></td>
                             <td class="actions">

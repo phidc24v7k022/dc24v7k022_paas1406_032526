@@ -23,13 +23,16 @@ if (!$person) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $masv  = trim($_POST['masv'] ?? '');
     $hoten  = trim($_POST['hoten'] ?? '');
-    $namsinh  = trim($_POST['namsinh'] ?? '');
+    $namsinhRaw = trim($_POST['namsinh'] ?? '');
     $dienthoai = trim($_POST['dienthoai'] ?? '');
     $email = trim($_POST['email'] ?? '');
 
     if ($masv === '')  $errors[] = "MSSV không được để trống.";
     if ($hoten === '')  $errors[] = "Họ tên không được để trống.";
-    if ($namsinh === '')  $errors[] = "Năm sinh không được để trống.";
+    if ($namsinhRaw === '' || filter_var($namsinhRaw, FILTER_VALIDATE_INT) === false) {
+        $errors[] = "Năm sinh phải là số nguyên hợp lệ.";
+    }
+    $namsinh = (int)$namsinhRaw;
     if ($dienthoai === '')  $errors[] = "Số điện thoại không được để trống.";
     if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors[] = "Email không hợp lệ.";
@@ -57,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'id'    => $id,
         'masv'  => $masv,
         'hoten'  => $hoten,
-        'namsinh'  => $namsinh,
+        'namsinh'  => $namsinhRaw,
         'dienthoai'  => $dienthoai,
         'email' => $email,
     ];
@@ -96,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="text" name="masv" value="<?= htmlspecialchars($person['masv']) ?>" required>
 
             <label>Năm sinh</label>
-            <input type="text" name="namsinh" value="<?= htmlspecialchars($person['namsinh']) ?>" required>
+            <input type="number" name="namsinh" value="<?= htmlspecialchars((string)$person['namsinh']) ?>" min="1900" max="<?= (int)date('Y') ?>" required>
 
             <label>Số điện thoại</label>
             <input type="text" name="dienthoai" value="<?= htmlspecialchars($person['dienthoai']) ?>" required>

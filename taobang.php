@@ -32,9 +32,11 @@ try {
         hoten VARCHAR(50) NOT NULL,
         dienthoai VARCHAR(50) NOT NULL,
         masv VARCHAR(20) NOT NULL,
-        namsinh VARCHAR(100) NOT NULL,
+        namsinh INT NOT NULL,
         email VARCHAR(100) NOT NULL
     )");
+
+    $conn->exec("ALTER TABLE dc24v7k022_paas_db MODIFY namsinh INT NOT NULL");
 
     if (basename($_SERVER['SCRIPT_FILENAME']) === 'taobang.php') {
         echo "Bảng dc24v7k022_paas_db đã được tạo thành công.";
