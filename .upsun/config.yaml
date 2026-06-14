@@ -1,0 +1,31 @@
+
+services:
+  db:
+    type: mariadb:11.4
+    configuration:
+      schemas:
+        - main
+      endpoints:
+        mysql:
+          default_schema: main
+          privileges:
+            main: admin
+
+applications:
+  myapp:
+    type: 'php:8.3'
+    relationships:
+      database: "db:mysql"
+    dependencies:
+      php:
+        composer/composer: '^2'
+    web:
+      locations:
+        '/':
+          root: ''
+          passthru: '/index.php'
+
+routes:
+  "https://{default}/":
+    type: upstream
+    upstream: "myapp:http"
