@@ -135,13 +135,13 @@ require __DIR__ . '/taobang.php';
             <h2>Menu chức năng</h2>
             <div class="menu-grid">
                 <a class="menu-btn btn-taobang" href="taobang.php">
-                    Tạo bảng
+                    Tạo bảng dữ liệu
                 </a>
-                <a class="menu-btn btn-taosv" href="taosv.php">
+                <a class="menu-btn btn-taosv" href="themsv.php">
                     Thêm sinh viên
                 </a>
                 <a class="menu-btn btn-lietke" href="lietkesv.php">
-                    Danh sách sinh viên
+                    Liệt kê danh sách
                 </a>
             </div>
         </div>

@@ -180,7 +180,7 @@ if ($msg !== '') {
         <div class="menu-bar">
             <a class="btn-home" href="index.php">Trang chủ</a>
             <a class="btn-taobang" href="taobang.php">Tạo bảng</a>
-            <a class="btn-taosv" href="taosv.php">Thêm sinh viên</a>
+            <a class="btn-taosv" href="themsv.php">Thêm sinh viên</a>
             <a class="btn-lietke" href="lietkesv.php">Danh sách sinh viên</a>
         </div>
 
@@ -200,7 +200,7 @@ if ($msg !== '') {
                 <tbody>
                     <?php if (count($people) === 0): ?>
                         <tr class="empty-row">
-                            <td colspan="7">Chưa có dữ liệu. Hãy <a href="taosv.php">thêm sinh viên</a>.</td>
+                            <td colspan="7">Chưa có dữ liệu. Hãy <a href="themsv.php">thêm sinh viên</a>.</td>
                         </tr>
                     <?php else: ?>
                         <?php foreach ($people as $p): ?>

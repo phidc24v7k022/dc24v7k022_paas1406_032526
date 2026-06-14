@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php endif; ?>
 
     <div class="form-box">
-        <form method="post" action="taosv.php">
+        <form method="post" action="themsv.php">
             <label>MSSV</label>
             <input type="text" name="masv" value="<?= htmlspecialchars($_POST['masv'] ?? '') ?>" required>
 
