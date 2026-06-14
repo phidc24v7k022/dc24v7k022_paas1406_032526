@@ -136,15 +136,12 @@ require __DIR__ . '/taobang.php';
             <div class="menu-grid">
                 <a class="menu-btn btn-taobang" href="taobang.php">
                     Tạo bảng
-                    <span>Khởi tạo bảng dc24v7k022_paas_db trên CSDL</span>
                 </a>
                 <a class="menu-btn btn-taosv" href="taosv.php">
                     Thêm sinh viên
-                    <span>Nhập thông tin sinh viên mới</span>
                 </a>
                 <a class="menu-btn btn-lietke" href="lietkesv.php">
                     Danh sách sinh viên
-                    <span>Xem, sửa và xóa dữ liệu đã lưu</span>
                 </a>
             </div>
         </div>
