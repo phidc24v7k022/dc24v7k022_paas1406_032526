@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-require __DIR__ . '/db.php';
+require __DIR__ . '/taobang.php';
 
 $errors = [];
 
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ':email' => $email,
         ]);
 
-        header("Location: index.php?msg=" . urlencode("Thêm dữ liệu thành công!"));
+        header("Location: lietkesv.php?msg=" . urlencode("Thêm dữ liệu thành công!"));
         exit;
     }
 }
@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </style>
 </head>
 <body>
-    <a class="back" href="index.php">&larr; Quay lại danh sách</a>
+    <a class="back" href="lietkesv.php">&larr; Quay lại danh sách</a>
     <h1>Thêm mới</h1>
 
     <?php if (!empty($errors)): ?>

@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
-require __DIR__ . '/db.php';
+require __DIR__ . '/taobang.php';
 
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 if ($id <= 0) {
-    header("Location: index.php?msg=" . urlencode("ID không hợp lệ."));
+    header("Location: lietkesv.php?msg=" . urlencode("ID không hợp lệ."));
     exit;
 }
 
@@ -16,7 +16,7 @@ $stmt->execute([':id' => $id]);
 $person = $stmt->fetch();
 
 if (!$person) {
-    header("Location: index.php?msg=" . urlencode("Không tìm thấy bản ghi."));
+    header("Location: lietkesv.php?msg=" . urlencode("Không tìm thấy bản ghi."));
     exit;
 }
 
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ':id'    => $id,
         ]);
 
-        header("Location: index.php?msg=" . urlencode("Cập nhật thành công!"));
+        header("Location: lietkesv.php?msg=" . urlencode("Cập nhật thành công!"));
         exit;
     }
 
@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </style>
 </head>
 <body>
-    <a class="back" href="index.php">&larr; Quay lại danh sách</a>
+    <a class="back" href="lietkesv.php">&larr; Quay lại danh sách</a>
     <h1>Sửa thông tin (ID: <?= (int)$person['id'] ?>)</h1>
 
     <?php if (!empty($errors)): ?>

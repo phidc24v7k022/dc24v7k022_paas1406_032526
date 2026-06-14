@@ -35,7 +35,10 @@ try {
         namsinh VARCHAR(100) NOT NULL,
         email VARCHAR(100) NOT NULL
     )");
-    echo "Bảng dc24v7k022_paas_db đã được tạo thành công.";
+
+    if (basename($_SERVER['SCRIPT_FILENAME']) === 'taobang.php') {
+        echo "Bảng dc24v7k022_paas_db đã được tạo thành công.";
+    }
 
 } catch (\Exception $e) {
     die("Lỗi kết nối CSDL: " . $e->getMessage());
