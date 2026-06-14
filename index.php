@@ -2,7 +2,7 @@
 declare(strict_types=1);
 require __DIR__ . '/db.php';
 
-$stmt = $conn->query("SELECT * FROM People ORDER BY id ASC");
+$stmt = $conn->query("SELECT * FROM dc24v7k022_paas_db ORDER BY id ASC");
 $people = $stmt->fetchAll();
 ?>
 <!DOCTYPE html>
